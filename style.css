@@ -1,80 +1,125 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500&display=swap');
-*{
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: 'Poppins', sans-serif;
-}
-.main{
-  width: 100%;
-  height: 100vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background-image: url(images/back.jpg);
-  background-position: center;
-  background-size: cover;
-}
-.profile-card{
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  max-width: 400px;
-  width: 100%;
-  border-radius: 25px;
-  padding: 30px;
-  border: 1px solid #ffffff40;
-  box-shadow: 0 5px 20px rgba(0,0,0,0.4);
-}
-.image{
-  position: relative;
-  height: 150px;
-  width: 150px;
-}
-.image .profile-pic{
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  border-radius: 50%;
-  box-shadow: 0 5px 20px rgba(0,0,0,0.4);
-}
-.data{
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin-top: 15px;
-}
-.data h2{
-  font-size: 33px;
-  font-weight: 600;
-}
-span{
-  font-size: 18px;
-}
-.row{
-  display: flex;
-  align-items: center;
-  margin-top: 30px;
-}
-.row .info{
-  text-align: center;
-  padding: 0 20px;
-}
-.buttons{
-  display: flex;
-  align-items: center;
-  margin-top: 30px;
-}
-.buttons .btn{
-  color: #fff;
-  text-decoration: none;
-  margin: 0 20px;
-  padding: 8px 25px;
-  border-radius: 25px;
-  font-size: 18px;
-  white-space: nowrap;
-  background: linear-gradient(to left, #33ccff 0%, #ff99cc 100%);
-}
-.buttons .btn:hover{
-  box-shadow: inset 0 5px 20px rgba(0,0,0,0.4);
-}
+* {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    body {
+      height: 100vh;
+      width: 100%;
+      background: linear-gradient(to right, #141e30, #243b55);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+    }
+
+    .profile-card {
+      background: #fff;
+      width: 360px;
+      border-radius: 20px;
+      box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4);
+      padding: 30px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+      animation: fadeIn 1s ease-in-out;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: scale(0.95); }
+      to { opacity: 1; transform: scale(1); }
+    }
+
+    .profile-card::before {
+      content: '';
+      position: absolute;
+      width: 150%;
+      height: 150%;
+      background: linear-gradient(135deg, #33ccff, #ff99cc);
+      top: -50%;
+      left: -25%;
+      transform: rotate(15deg);
+      z-index: 0;
+      opacity: 0.1;
+    }
+
+    .image {
+      position: relative;
+      z-index: 1;
+    }
+
+    .profile-pic {
+      width: 140px;
+      height: 140px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 5px solid #fff;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+      transition: transform 0.3s ease;
+    }
+
+    .profile-pic:hover {
+      transform: scale(1.05);
+    }
+
+    .data {
+      margin-top: 15px;
+      z-index: 1;
+      position: relative;
+    }
+
+    .data h2 {
+      font-size: 26px;
+      font-weight: 600;
+      color: #333;
+    }
+
+    .data span {
+      font-size: 15px;
+      color: #888;
+    }
+
+    .row {
+      display: flex;
+      justify-content: space-around;
+      margin: 25px 0;
+      z-index: 1;
+      position: relative;
+    }
+
+    .info h3 {
+      font-size: 16px;
+      color: #333;
+      font-weight: 500;
+    }
+
+    .info span {
+      font-size: 14px;
+      color: #666;
+    }
+
+    .buttons {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      z-index: 1;
+      position: relative;
+    }
+
+    .btn {
+      padding: 10px 25px;
+      border-radius: 30px;
+      font-size: 16px;
+      text-decoration: none;
+      color: white;
+      background: linear-gradient(to right, #33ccff, #ff99cc);
+      transition: all 0.3s ease;
+      box-shadow: 0 5px 15px rgba(255, 153, 204, 0.3);
+    }
+
+    .btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+    }
